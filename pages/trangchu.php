@@ -1,336 +1,55 @@
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
+<?php
+    $theloai = DanhSachTheLoai();
+    while($row_theloai = mysqli_fetch_array($theloai)){
+?>
+    <div class="box-cat">
+        <div class="cat">
+            <div class="main-cat">
+                <a href="#"><?php echo $row_theloai['name'] ?></a>
             </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
+            <div class="child-cat">
+                <?php
+                    $loaitin = DanhSachLoaiTinTheoTheLoai($row_theloai['id']);
+                    while($row_loaitin = mysqli_fetch_array($loaitin)){
+                ?>
+                    <a href="#"><?php echo $row_loaitin['name'] ?></a>
+                <?php        
+                    }
+                ?>
+            </div>
+            <div class="clear"></div>
+            <div class="cat-content">
+                <div class="col1">
+                    <div class="news">
+                        <?php
+                            $mottin = TinTheoTheLoai_MotTin($row_theloai['id']);
+                            $row_mottin = mysqli_fetch_array($mottin);
+                        ?>
+                        <h3 class="title" ><a href="#"><?php echo $row_mottin['title'] ?> </a></h3>
+                        <img class="images_news" src="upload/tintuc/<?php echo $row_mottin['urlImage'] ?>" align="left" />
+                        <div class="des"><?php echo $row_mottin['summary'] ?></div>
+                        <div class="clear"></div>
+                       
+                    </div>
+                </div>
+                <div class="col2">
+                    <?php
+                        $bontin = TinTheoTheLoai_BonTin($row_theloai['id']);
+                        while($row_bontin = mysqli_fetch_array($bontin)){
+                    ?>
+                        <p class="tlq"><a href="#"><?php echo $row_bontin['title'] ?></a></p>
+                    <?php
+                        }
+                    ?>
+                    
+                </div>    
+            </div>
         </div>
     </div>
-</div>
-<div class="clear"></div>
+    <div class="clear"></div>
+<?php        
+    }
+?>
 
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
-
-
-
-<!-- box cat-->
-
-
-
-<div class="clear"></div>
-<div class="box-cat">
-	<div class="cat">
-    	<div class="main-cat">
-        	<a href="#">Thể thao</a>
-        </div>
-        <div class="child-cat">
-        	<a href="#">Videos</a>
-            <a href="#">Bóng đá</a>
-            <a href="#">Tennis</a>
-            <a href="#">Các môn khác</a>
-            <a href="#">Hậu trường</a>
-        </div>
-        <div class="clear"></div>
-        <div class="cat-content">
-        	<div class="col1">
-            	<div class="news">
-                    <h3 class="title" ><a href="#">Tour de France 2014 và những khoảnh khắc đẹp </a></h3>
-                    <img class="images_news" src="upload/tintuc/9-1406519730_180x108.jpg" align="left" />
-                    <div class="des">Băng qua những cánh đồng hướng dương, đua trong những ngày mưa gió hoặc những đoạn đồi núi hiểm trở... là hình ảnh ấn tượng đọng lại trong lần thứ </div>
-                    <div class="clear"></div>
-                   
-				</div>
-            </div>
-            <div class="col2">
-             <p class="tlq"><a href="#"> Hiệp hội hàng không thề hành động sau một tuần đen tối </a>
-                </a></p>
-               <p class="tlq"><a href="#">Thảm họa liên tiếp và dấu hỏi về an toàn hàng không</a></p> 
-            </div>    
-        </div>
-    </div>
-</div>
 
 
