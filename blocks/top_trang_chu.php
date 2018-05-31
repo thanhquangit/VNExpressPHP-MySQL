@@ -8,7 +8,7 @@
         <div id="slideleft-main">
             <img src="upload/tintuc/<?php echo $row_tinmoinhat_mottin['urlImage']?>" />
             <br />
-            <h2 class="title"><a href="#"><?php echo $row_tinmoinhat_mottin['title'] ?></a> </h2>
+            <h2 class="title"><a href="index.php?p=chitiettin&id=<?php echo $row_tinmoinhat_mottin['id'] ?>"><?php echo $row_tinmoinhat_mottin['title'] ?></a> </h2>
             <div class="des">
                 <?php echo $row_tinmoinhat_mottin['summary'] ?>
             </div>
@@ -23,7 +23,7 @@
                   ?>
                     <li>
                         <div class="title_news">
-                            <a href="#" class="txt_link"><?php echo $row_tinmoinhat_tamtin['title'] ?></a>
+                            <a href="index.php?p=chitiettin&id=<?php echo $row_tinmoinhat_tamtin['id'] ?>" class="txt_link"><?php echo $row_tinmoinhat_tamtin['title'] ?></a>
                         </div>
                     </li>
                   <?php

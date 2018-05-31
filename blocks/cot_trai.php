@@ -13,7 +13,7 @@
                 <div class="col1">
                     <div class="news">
                         <img class="images_news" src="upload/tintuc/<?php echo $row['urlImage']?>" />
-                        <h3 class="title"><a href="#"></a><?php echo $row['title'] ?></a><span class="hit"><?php echo $row['qtyView'] ?></span></h3>
+                        <h3 class="title"><a href="index.php?p=chitiettin&id=<?php echo $row['id'] ?>"><?php echo $row['title'] ?></a><span class="hit"><?php echo $row['qtyView'] ?></span></h3>
                         <div class="clear"></div>
                     </div>
                 </div>

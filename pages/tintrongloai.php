@@ -25,7 +25,7 @@
         <div class="cat-content">
             <div class="col0 col1">
                 <div class="news">
-                    <h3 class="title" ><a href="#"><?php echo $row_tintuc['title']?> </a></h3>
+                    <h3 class="title" ><a href="index.php?p=chitiettin&id=<?php echo $row_tintuc['id'] ?>"><?php echo $row_tintuc['title']?> </a></h3>
                     <img class="images_news" src="upload/tintuc/<?php echo $row_tintuc['urlImage']?>" align="left" />
                     <div class="des"><?php echo $row_tintuc['summary'] ?></div>
                     <div class="clear"></div>

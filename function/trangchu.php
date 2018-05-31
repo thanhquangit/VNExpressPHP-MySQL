@@ -163,4 +163,37 @@
 
 		return mysqli_query($mysqli,$qr);
 	}
+	function ChiTietTin($id){
+		$mysqli = mysqli_connect('localhost','root','','vnexpress');
+		$mysqli->set_charset('utf8');
+		$qr = "	
+				SELECT *, users.name
+				FROM news, users
+				WHERE news.id = $id
+				AND news.users_id = users.id
+				";
+		return mysqli_query($mysqli,$qr);
+	}
+	function TinCungLoai($id){
+		$mysqli = mysqli_connect('localhost','root','','vnexpress');
+		$mysqli->set_charset('utf8');
+		$qr = "	
+				SELECT *
+				FROM news
+				WHERE type_id <> $id
+				ORDER BY RAND()
+				LIMIT 0,3
+				";
+		return mysqli_query($mysqli,$qr);
+	}
+	function CapNhatSoLanXemTin($id){
+		$mysqli = mysqli_connect('localhost','root','','vnexpress');
+		$mysqli->set_charset('utf8');
+		$qr = "	
+				UPDATE news
+				SET qtyView = qtyView + 1
+				WHERE id = $id
+				";
+		mysqli_query($mysqli,$qr);
+	}
 ?>

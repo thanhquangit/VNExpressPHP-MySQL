@@ -86,7 +86,7 @@
                     switch($p){
                         case "tintrongloai" :   require('pages/tintrongloai.php');
                                                 break;
-                        case "chitiettin" :     require('pages/chitietin.php');
+                        case "chitiettin" :     require('pages/chitiettin.php');
                                                 break;
                         default            :    require('pages/trangchu.php');
                     }

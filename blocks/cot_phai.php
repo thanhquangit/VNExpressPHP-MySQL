@@ -17,7 +17,7 @@
         <div class="cat-content">
             <div class="col1">
                 <div class="news">
-                    <h3 class="title"><a href="#"><?php echo $row_mottin['title']?></a></h3>
+                    <h3 class="title"><a href="index.php?p=chitiettin&id=<?php echo $row_mottin['id'] ?>"><?php echo $row_mottin['title']?></a></h3>
                     <img class="images_news" src="upload/tintuc/<?php echo $row_mottin['urlImage'] ?>" align="left" />
                     <div class="des">
                         <?php echo $row_mottin['summary'] ?>
@@ -31,7 +31,7 @@
             $tintheoloai_bontin = TinTheoLoaiTin_BonTin($id);
             while($row_bontin = mysqli_fetch_array($tintheoloai_bontin)){
         ?>
-                    <h3 class="tlq"><a href="#"><?php echo $row_bontin['title'] ?></a></h3>
+                    <h3 class="tlq"><a href="index.php?p=chitiettin&id=<?php echo $row_bontin['id'] ?>"><?php echo $row_bontin['title'] ?></a></h3>
                     <?php
             }
 
@@ -64,7 +64,7 @@
         <div class="cat-content">
             <div class="col1">
                 <div class="news">
-                    <h3 class="title"><a href="#"><?php echo $row_mottin['title']?></a></h3>
+                    <h3 class="title"><a href="index.php?p=chitiettin&id=<?php echo $row_mottin['id'] ?>"><?php echo $row_mottin['title']?></a></h3>
                     <img class="images_news" src="upload/tintuc/<?php echo $row_mottin['urlImage'] ?>" align="left" />
                     <div class="des">
                         <?php echo $row_mottin['summary'] ?>
@@ -78,7 +78,7 @@
             $tintheoloai_bontin = TinTheoLoaiTin_BonTin($id);
             while($row_bontin = mysqli_fetch_array($tintheoloai_bontin)){
         ?>
-                    <h3 class="tlq"><a href="#"><?php echo $row_bontin['title'] ?></a></h3>
+                    <h3 class="tlq"><a href="index.php?p=chitiettin&id=<?php echo $row_bontin['id'] ?>"><?php echo $row_bontin['title'] ?></a></h3>
                     <?php
             }
 
@@ -111,7 +111,7 @@
         <div class="cat-content">
             <div class="col1">
                 <div class="news">
-                    <h3 class="title"><a href="#"><?php echo $row_mottin['title']?></a></h3>
+                    <h3 class="title"><a href="index.php?p=chitiettin&id=<?php echo $row_mottin['id'] ?>"><?php echo $row_mottin['title']?></a></h3>
                     <img class="images_news" src="upload/tintuc/<?php echo $row_mottin['urlImage'] ?>" align="left" />
                     <div class="des">
                         <?php echo $row_mottin['summary'] ?>
@@ -125,7 +125,7 @@
             $tintheoloai_bontin = TinTheoLoaiTin_BonTin($id);
             while($row_bontin = mysqli_fetch_array($tintheoloai_bontin)){
         ?>
-                    <h3 class="tlq"><a href="#"><?php echo $row_bontin['title'] ?></a></h3>
+                    <h3 class="tlq"><a href="index.php?p=chitiettin&id=<?php echo $row_bontin['id'] ?>"><?php echo $row_bontin['title'] ?></a></h3>
                     <?php
             }
 
